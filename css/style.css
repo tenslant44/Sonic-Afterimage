@@ -1,0 +1,33 @@
+html, body {
+  margin: 0; padding: 0; width: 100%; height: 100%;
+  background: #000; overflow: hidden;
+  touch-action: none; user-select: none; -webkit-user-select: none;
+}
+#wrap {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+#screen {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: #000;
+}
+#touch { display: none; }
+body.touch #touch {
+  display: block; position: fixed; inset: 0; pointer-events: none;
+}
+#touch button {
+  pointer-events: auto;
+  background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.3); border-radius: 50%;
+  font: bold 16px sans-serif; width: 56px; height: 56px; margin: 0; padding: 0;
+}
+#dpad { position: absolute; left: 16px; bottom: 16px; width: 168px; height: 168px; }
+#dpad button { position: absolute; }
+#dpad [data-k=left] { left: 0; top: 56px; }
+#dpad [data-k=right] { right: 0; top: 56px; }
+#dpad [data-k=up] { left: 56px; top: 0; }
+#dpad [data-k=down] { left: 56px; bottom: 0; }
+#btns { position: absolute; right: 20px; bottom: 24px; display: flex; align-items: flex-end; gap: 18px; }
+#btns .big { width: 78px; height: 78px; font-size: 24px; }
+#btns .small { width: 64px; height: 32px; border-radius: 16px; font-size: 11px; }
